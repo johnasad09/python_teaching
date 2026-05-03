@@ -23,18 +23,26 @@ no_of_numbers = int(input("How many numbers would you like in your password? "))
 no_of_symbols = int(input("How many symbols would you like in your password? "))
 
 # Method 1: with string
-# password = ''
-#
-# for char in range(no_of_letters):
-#     password += random.choice(letters)
-#     # print(f"the password variable contains: {password}")
-# for num in range(no_of_numbers):
-#     password += random.choice(numbers)
-#
-# for symbol in range(no_of_symbols):
-#     password += random.choice(special_characters)
-#
-# print(f"Your generated password is:  {password}")
+password = ''
+
+for char in range(no_of_letters):
+    password += random.choice(letters)
+    # print(f"the password variable contains: {password}")
+for num in range(no_of_numbers):
+    password += random.choice(numbers)
+for symbol in range(no_of_symbols):
+    password += random.choice(special_characters)
+
+pwd_list = []
+for p in password:
+    pwd_list.append(p)
+
+print(f"Your generated string password is:  {password}")
+print(f"Your generated list password is:  {pwd_list}")
+random.shuffle(pwd_list)
+print(f"Your shuffled password is:  {pwd_list}")
+password = "".join(pwd_list)
+print(f"Your main password is:  {password}")
 
 
 # method 2 with list
@@ -45,7 +53,7 @@ for char in range(no_of_letters):
     # print(f"the password list contains: {password}")
 for num in range(no_of_numbers):
     password.append(random.choice(numbers))
-
+    
 for symbol in range(no_of_symbols):
     password.append(random.choice(special_characters))
 
